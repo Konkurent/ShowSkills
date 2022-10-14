@@ -39,7 +39,7 @@ public class ListService {
 
     public java.util.List<Tuple2<List, Integer>> getLists() {
         return listRepository.findAll().stream()
-                .map(l -> new Tuple2<List, Integer>(ListDTOConverter.toDto(l), sumkCalProducts(l.getProducts())))
+                .map(l -> new Tuple2<>(ListDTOConverter.toDto(l), sumkCalProducts(l.getProducts())))
                 .collect(Collectors.toList());
     }
 
